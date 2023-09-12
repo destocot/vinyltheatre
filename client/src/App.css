@@ -1,0 +1,275 @@
+/* BASIC */
+
+.sub-heading {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+/* HEADER */
+.title {
+  margin-right: auto;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(50px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.title > svg {
+  margin-left: 10px;
+  animation: move 2s linear infinite;
+}
+
+.nav {
+  display: flex;
+  height: 100px;
+  align-items: center;
+}
+
+.nav__link {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+}
+
+.nav .active {
+  background-color: #404040;
+}
+
+/* HOME */
+.search {
+  display: flex;
+  margin-bottom: 10px;
+  width: fit-content;
+  font-size: 1.2rem;
+  align-items: center;
+  border: 1px solid white;
+  background-color: #455b55;
+}
+
+.search__input {
+  padding: 0.2em 0.4em;
+  outline: none;
+}
+
+.search__btn {
+  font: inherit;
+  padding: 0.2em 0.4em;
+  transition: all 0.2s;
+  cursor: pointer;
+  background-color: #306844;
+  color: white;
+  transition: all 0.4s;
+}
+
+.search__btn:hover,
+.search__btn:focus {
+  background-color: #455b55;
+}
+
+.search__clear {
+  background-color: #455b55;
+  transition: all 0.4s;
+}
+
+.search__clear:hover {
+  font-size: 1.75rem;
+}
+
+/* FILL_ME */
+
+.albums {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 1024px) {
+  .albums {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .albums {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .albums {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.adder-container {
+  position: relative;
+  z-index: 1;
+}
+
+.album__adder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.album__adder-btn {
+  padding: 20px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 50px;
+  border: 1px solid black;
+  transition: all 0.2s;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* LOGIN */
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.login__title {
+  margin-right: auto;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 500px;
+}
+
+.login__form-input {
+  padding: 1rem 1.5rem;
+  outline: none;
+}
+
+.login__form-btn {
+  font: inherit;
+  padding: 1rem 1.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  background-color: #306844;
+  color: white;
+  transition: all 0.4s;
+}
+
+.login__form-btn:hover,
+.login__form-btn:focus {
+  background-color: #455b55;
+}
+
+/* REGISTER */
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.register__title {
+  margin-right: auto;
+}
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 500px;
+}
+
+.register__form-input {
+  padding: 1rem 1.5rem;
+  outline: none;
+}
+
+.register__form-btn {
+  font: inherit;
+  padding: 1rem 1.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  background-color: #306844;
+  color: white;
+  transition: all 0.4s;
+}
+
+.register__form-btn:hover,
+.register__form-btn:focus {
+  background-color: #455b55;
+}
+
+/* DASHBAORD */
+.dashboard-search {
+  display: flex;
+  row-gap: 20px;
+  width: 500px;
+  margin-bottom: 15px;
+  background-color: #455b55;
+}
+
+.dashboard-search__input {
+  padding: 1rem 1.5rem;
+  outline: none;
+}
+.dashboard-search__input:first-child {
+  border-right: 2px solid black;
+}
+
+.dashboard-search__btn {
+  font: inherit;
+  padding: 1rem 1.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  background-color: #306844;
+  color: white;
+  transition: all 0.4s;
+}
+
+.dashboard-search__btn:hover,
+.dashboard-search__btn:focus {
+  background-color: #455b55;
+}
+
+.dashboard-search__clear {
+  background-color: #455b55;
+  transition: all 0.4s;
+}
+
+.dashboard-search__clear:hover {
+  font-size: 2rem;
+}
+
+/* FOOTER */
+.footer {
+  height: 100px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
