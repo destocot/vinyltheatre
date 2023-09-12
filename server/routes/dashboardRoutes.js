@@ -8,3 +8,4 @@ router.post('/add', requireAuth, addAlbum);
 router.delete('/delete/:albumId', requireAuth, deleteAlbum);
 
 module.exports = router;
+//test
