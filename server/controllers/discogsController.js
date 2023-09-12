@@ -23,6 +23,39 @@ const fetchAlbums = async (req, res) => {
   }
 };
 
+const albumInformation = async (req, res) => {
+  try {
+    axios.get(`https://api.discogs.com/masters/${req.params.masterId}`, {
+      headers: {
+        'Authorization': `Discogs token=${process.env.DISCOGS_TOKEN}`
+      }
+    })
+      .then(response => {
+        const genres = response.data.genres;
+        const styles = response.data.styles;
+        const year = response.data.year;
+        const video = response.data.videos[0].uri;
+        const tracklist = response.data.tracklist.map((track) => {
+          return `${track.title} (${track.duration})`
+        });
+
+        return { genres, styles, year, tracklist, video };
+      })
+      .then(transformed => {
+        res.json(transformed);
+      })
+      .catch(() => {
+        return res.json({ error: "error finding album information" });
+
+      })
+  } catch (error) {
+    return res.json({ error: "error finding album information" });
+
+  }
+};
+
+
 module.exports = {
-  fetchAlbums
+  fetchAlbums,
+  albumInformation
 }

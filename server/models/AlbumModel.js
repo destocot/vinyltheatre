@@ -12,11 +12,14 @@ const albumSchema = new mongoose.Schema({
   cover: {
     type: String,
     required: true,
-    unique: true
   },
   username: {
     type: String,
     required: true,
+  },
+  master_id: {
+    type: Number,
+    unique: true
   }
 }, {
   timestamps: true
