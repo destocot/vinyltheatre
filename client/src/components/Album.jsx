@@ -6,7 +6,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import AddIcon from "@mui/icons-material/Add";
 import toast, { Toaster } from "react-hot-toast";
 
-export default function Album({ album }) {
+export default function Album({ album, setUserAlbums }) {
   const [add, setAdd] = useState(false);
 
   const addAlbum = () => {
@@ -29,6 +29,15 @@ export default function Album({ album }) {
             toast.error(res.data.error);
           } else {
             toast.success("album added");
+            setUserAlbums((state) => [
+              ...state,
+              {
+                title: album.title.split(" - ")[1],
+                artist: album.title.split(" - ")[0],
+                cover: album.cover_image,
+                master_id: album.master_id,
+              },
+            ]);
           }
           setAdd(false);
         } else {

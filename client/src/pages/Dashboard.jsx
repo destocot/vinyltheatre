@@ -76,6 +76,9 @@ export default function Dashboard() {
       })
       .then((res) => {
         if (res.data) {
+          setUserAlbums((state) =>
+            state.filter((album) => album._id !== albumId)
+          );
           toast.success("album successfully deleted");
           setEdit(false);
         } else {
@@ -145,7 +148,7 @@ export default function Dashboard() {
         </div>
         <div className="albums">
           {albums.map((album, index) => (
-            <Album key={index} album={album} />
+            <Album key={index} album={album} setUserAlbums={setUserAlbums} />
           ))}
         </div>
       </div>
