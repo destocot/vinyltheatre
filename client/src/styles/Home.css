@@ -1,0 +1,134 @@
+/* HOME */
+.search-container {
+  padding: 0 20px;
+}
+
+.search {
+  display: flex;
+  margin-bottom: 10px;
+  width: fit-content;
+  font-size: 1.1rem;
+  background-color: #306844;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+}
+
+.search:hover {
+  .search__input {
+    padding-right: 4vw;
+  }
+}
+
+.search__input {
+  padding: 0.3rem;
+  outline: none;
+  transition: all 0.2s;
+
+  @media (max-width: 500px) {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.05rem;
+  }
+}
+
+.search__input:focus {
+  padding-right: 4vw;
+}
+
+.search__btn,
+.search__clear {
+  font: inherit;
+  padding: 0.2rem 0.4rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  background-color: #306844;
+  color: white;
+  transition: all 0.4s;
+  border: 2px solid #306844;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 640px) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: 500px) {
+    padding: 0;
+  }
+}
+
+.search__btn:hover,
+.search__btn:focus,
+.search__clear:hover {
+  background-color: peru;
+  border: 2px solid peru;
+}
+
+.search__clear {
+  border-left: 1px solid white;
+
+  @media (max-width: 640px) {
+    border-top: 1px solid white;
+    border-left: none;
+  }
+}
+
+.user-search__albums {
+  overflow-y: scroll;
+  max-height: 50vh;
+}
+
+.user-search__albums::-webkit-scrollbar {
+  width: 5px;
+}
+
+.user-search__albums::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.user-search__albums::-webkit-scrollbar-thumb {
+  background: #306844;
+}
+
+.user-search__albums::-webkit-scrollbar-thumb:hover {
+  background: peru;
+}
+
+.user-search__albums > button {
+}
+
+.user-search__albums > button:nth-child(1) {
+  animation: fadeIn 0.5s 0.1s backwards;
+}
+
+.user-search__albums > button:nth-child(2) {
+  animation: fadeIn 0.5s 0.2s backwards;
+}
+
+.user-search__albums > button:nth-child(3) {
+  animation: fadeIn 0.5s 0.3s backwards;
+}
+
+.user-search__albums > button:nth-child(4) {
+  animation: fadeIn 0.5s 0.4s backwards;
+}
+
+.user-search__albums > button:nth-child(5) {
+  animation: fadeIn 0.5s 0.5s backwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* RECENTLY ADDED ALBUMS */
+
+.recent-container {
+  padding: 0 20px;
+}

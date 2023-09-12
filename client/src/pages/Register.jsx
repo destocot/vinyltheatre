@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import "../styles/Form.css";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export default function Register() {
   const register = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5001/register", { username })
+      .post("http://localhost:5001/register", { username, email, password })
       .then((res) => {
         if (res.data.error) {
           throw Error(res.data.error);
@@ -38,7 +39,7 @@ export default function Register() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Enter a username ..."
-          disabled
+          required
         />
         <input
           className="register__form-input"
@@ -46,7 +47,7 @@ export default function Register() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter a email ..."
-          disabled
+          required
         />
         <input
           className="register__form-input"
@@ -54,7 +55,7 @@ export default function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Enter a password ..."
-          disabled
+          required
         />
         <button className="register__form-btn" type="submit">
           Register

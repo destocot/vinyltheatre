@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import CardMui from "./CardMUI";
 import ClearIcon from "@mui/icons-material/Clear";
+import AddIcon from "@mui/icons-material/Add";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Album({ album }) {
   const [add, setAdd] = useState(false);
@@ -15,6 +17,7 @@ export default function Album({ album }) {
           title: album.title.split(" - ")[1],
           artist: album.title.split(" - ")[0],
           cover: album.cover_image,
+          master_id: album.master_id,
         },
         {
           withCredentials: true,
@@ -22,22 +25,28 @@ export default function Album({ album }) {
       )
       .then((res) => {
         if (res.data) {
-          console.log("album added", res.data, "!!!");
+          if (res.data.error) {
+            toast.error(res.data.error);
+          } else {
+            toast.success("album added");
+          }
+          setAdd(false);
         } else {
-          alert("album not found");
+          toast.error("album not found");
         }
       });
   };
 
   return (
     <div
-      className="adder-container"
+      className="adder-container user-search__albums"
       onClick={() => {
         if (!add) {
           setAdd(true);
         }
       }}
     >
+      <Toaster />
       <CardMui
         album={{
           title: album.title.split(" - ")[1],
@@ -46,9 +55,9 @@ export default function Album({ album }) {
         }}
       />
       {add && (
-        <div className="album__adder">
+        <div className="album__adder ">
           <button className="album__adder-btn" onClick={() => addAlbum()}>
-            +
+            <AddIcon fontSize="large" />
           </button>
           <button
             className="album__adder-btn"
@@ -56,7 +65,7 @@ export default function Album({ album }) {
               setAdd(false);
             }}
           >
-            <ClearIcon />
+            <ClearIcon fontSize="large" />
           </button>
         </div>
       )}
@@ -68,5 +77,6 @@ Album.propTypes = {
   album: PropTypes.shape({
     title: PropTypes.string,
     cover_image: PropTypes.string,
+    master_id: PropTypes.number,
   }),
 };

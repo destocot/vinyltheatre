@@ -3,6 +3,7 @@ import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import CardMui from "./CardMUI";
 import ClearIcon from "@mui/icons-material/Clear";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function SearchUser() {
   const [username, setUsername] = useState("");
@@ -21,7 +22,7 @@ export default function SearchUser() {
   };
 
   return (
-    <div>
+    <div className="search-container">
       <Toaster />
       <h2 className="sub-heading">Search A User&apos;s Favorite Albums</h2>
       <div className="search">
@@ -37,19 +38,21 @@ export default function SearchUser() {
           type="button"
           onClick={() => handleSearch()}
         >
-          Search
+          <SearchIcon />
         </button>
         {username && (
-          <ClearIcon
+          <button
             className="search__clear"
             onClick={() => {
               setAlbums([]);
               setUsername("");
             }}
-          />
+          >
+            <ClearIcon />
+          </button>
         )}
       </div>
-      <div className="albums">
+      <div className="albums user-search__albums">
         {albums.map((album) => (
           <CardMui key={album._id} album={album} />
         ))}

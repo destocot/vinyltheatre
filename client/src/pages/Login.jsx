@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useStore } from "../store/store";
+import "../styles/Form.css";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function Login() {
     axios
       .post(
         "http://localhost:5001/login",
-        { username },
+        { username, password },
         {
           withCredentials: true,
         }
@@ -25,7 +26,12 @@ export default function Login() {
       .then(() => {
         allowAccess();
         changeName(username);
-        navigate("/dashboard");
+        toast.success("Login Successful!\nRedirecting to your dashboard...", {
+          duration: 1000,
+        });
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 1000);
       })
       .catch((error) => {
         toast.error(error.response.data.message);
@@ -44,6 +50,7 @@ export default function Login() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Enter your username..."
+            required
           />
           <input
             className="login__form-input"
@@ -51,7 +58,7 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter your password ..."
-            disabled
+            required
           />
           <button className="login__form-btn" type="submit">
             Login
