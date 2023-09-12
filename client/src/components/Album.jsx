@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import axios from "axios";
+import axios from "../axiosConfig.js";
 import CardMui from "./CardMUI";
 import ClearIcon from "@mui/icons-material/Clear";
 import AddIcon from "@mui/icons-material/Add";
@@ -12,7 +12,7 @@ export default function Album({ album, setUserAlbums }) {
   const addAlbum = () => {
     axios
       .post(
-        "http://localhost:5001/dashboard/add",
+        "/dashboard/add",
         {
           title: album.title.split(" - ")[1],
           artist: album.title.split(" - ")[0],

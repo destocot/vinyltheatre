@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../axiosConfig.js";
 import Album from "../components/Album";
 import { useNavigate } from "react-router-dom";
 import { useStore } from "../store/store";
@@ -43,7 +43,7 @@ export default function Dashboard() {
 
   const handleSearch = () => {
     axios
-      .post("http://localhost:5001/api/discogs", {
+      .post("/api/discogs", {
         albumTitle,
         artist,
         perPage: 5,
@@ -57,7 +57,7 @@ export default function Dashboard() {
   const handleInformation = (master_id, title, artist, cover) => {
     setMeta(clearMeta);
     axios
-      .get(`http://localhost:5001/api/discogs/information/${master_id}`)
+      .get(`/api/discogs/information/${master_id}`)
       .then((results) => {
         if (results.data.error) {
           throw results.data.error;
@@ -71,7 +71,7 @@ export default function Dashboard() {
 
   const handleDelete = (albumId) => {
     axios
-      .delete(`http://localhost:5001/dashboard/delete/${albumId}`, {
+      .delete(`/dashboard/delete/${albumId}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -92,7 +92,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5001/dashboard/albums", {
+      .get("/dashboard/albums", {
         withCredentials: true,
       })
       .then((res) => {

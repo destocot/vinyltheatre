@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import axios from "../axiosConfig.js";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useStore } from "../store/store";
@@ -17,7 +17,7 @@ export default function Login() {
     e.preventDefault();
     axios
       .post(
-        "http://localhost:5001/login",
+        "/login",
         { username, password },
         {
           withCredentials: true,

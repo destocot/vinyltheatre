@@ -1,4 +1,5 @@
-import axios from "axios";
+// import axios from "axios";
+import axios from "../axiosConfig";
 import { useEffect, useState } from "react";
 import CardMUI from "./CardMUI";
 
@@ -7,7 +8,7 @@ export default function RecentlyAdded() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5001/recent")
+      .get("/recent")
       .then((results) => {
         setAlbums(results.data);
       })

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import axios from "../axiosConfig.js";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import "../styles/Form.css";
@@ -13,7 +13,7 @@ export default function Register() {
   const register = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5001/register", { username, email, password })
+      .post("/register", { username, email, password })
       .then((res) => {
         if (res.data.error) {
           throw Error(res.data.error);

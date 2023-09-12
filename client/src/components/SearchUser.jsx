@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../axiosConfig.js";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import CardMui from "./CardMUI";
@@ -11,7 +11,7 @@ export default function SearchUser() {
 
   const handleSearch = () => {
     axios
-      .get(`http://localhost:5001/user/${username}`)
+      .get(`/user/${username}`)
       .then((results) => {
         if (!results.data.length) {
           throw Error("user not found");
