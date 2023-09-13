@@ -9,11 +9,13 @@ const cookieParser = require('cookie-parser');
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors({
-  origin: ["https://vinyltheatre-mvp.vercel.app"],
-  methods: ['POST', 'PUT', 'GET', 'DELETE', 'HEAD'],
-  credentials: true
-}))
+// app.use(cors({
+//   origin: ["https://vinyltheatre-mvp.vercel.app"],
+//   methods: ['POST', 'PUT', 'GET', 'DELETE', 'HEAD'],
+//   credentials: true
+// }))
+app.use(cors());
+
 
 const mainRouter = require('./routes/mainRoutes');
 app.use('/', mainRouter);
