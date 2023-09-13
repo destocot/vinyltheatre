@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 
 const register = async (req, res) => {
   return res.json({
+    error: 'registration is down, come back after mvp presentations'
   })
 
   try {
