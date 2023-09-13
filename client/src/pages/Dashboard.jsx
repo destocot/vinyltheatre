@@ -49,6 +49,7 @@ export default function Dashboard() {
         perPage: 5,
       })
       .then((results) => {
+        console.log(results.data);
         setAlbums(results.data);
       })
       .catch((error) => console.log(error));

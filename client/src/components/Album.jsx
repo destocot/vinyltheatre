@@ -32,10 +32,11 @@ export default function Album({ album, setUserAlbums }) {
             setUserAlbums((state) => [
               ...state,
               {
-                title: album.title.split(" - ")[1],
-                artist: album.title.split(" - ")[0],
-                cover: album.cover_image,
-                master_id: album.master_id,
+                title: res.data.title,
+                artist: res.data.artist,
+                cover: res.data.cover,
+                master_id: res.data.master_id,
+                _id: res.data._id,
               },
             ]);
           }

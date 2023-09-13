@@ -4,7 +4,6 @@ const cors = require('cors');
 const colors = require('colors');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
-// origin: "http://localhost:5173",
 
 const app = express();
 app.use(cookieParser());
