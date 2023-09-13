@@ -95,7 +95,9 @@ const login = async (req, res) => {
 
     let token = jwt.sign({ username: user.username }, process.env.JWT_SECRET_KEY, { expiresIn: 60 * 10 }); // 10 minute
     res.cookie("token", token, {
+      httpOnly: true,
       sameSite: 'none',
+      secure: true,
     })
     res.json(user.username);
   } catch (error) {
