@@ -4,13 +4,13 @@ const cors = require('cors');
 const colors = require('colors');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+// origin: "http://localhost:5173",
 
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({
-  // origin: "http://localhost:5173",
-  origin: "https://vinyltheatre-mvp.vercel.app",
+  origin: ["https://vinyltheatre-mvp.vercel.app"],
   methods: ['POST', 'PUT', 'GET', 'DELETE', 'HEAD'],
   credentials: true
 }))
