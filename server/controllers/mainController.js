@@ -5,6 +5,10 @@ const Album = require("../models/AlbumModel");
 const bcrypt = require('bcrypt');
 
 const register = async (req, res) => {
+  return res.json({
+    error: 'register is currently closed, please try again later'
+  })
+
   try {
     const { username, email, password } = req.body;
 
