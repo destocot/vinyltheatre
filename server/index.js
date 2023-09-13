@@ -26,8 +26,8 @@ app.use('/', mainRouter);
 // const dashboardRouter = require('./routes/dashboardRoutes');
 // app.use('/dashboard', dashboardRouter);
 
+const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`.yellow))
-// const port = process.env.PORT || 5000;
 
 // mongoose.connect(process.env.MONGODB_URI)
 //   .then(() => {
