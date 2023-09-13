@@ -4,7 +4,7 @@ import axios from 'axios';
 const instance = axios.create({
   // .. where we make our configurations
   // baseURL: 'http://localhost:5001/'
-  baseURL: 'https://vinyltheatre-mvp-srvr.onrender.com/'
+  baseURL: 'https://vinyltheatre-mvp-srvr.onrender.com'
 });
 
 export default instance;
