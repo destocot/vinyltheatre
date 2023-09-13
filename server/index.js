@@ -15,6 +15,11 @@ app.use(cors({
   credentials: true
 }))
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://vinyltheatre-mvp.vercel.app');
+  next();
+});
+
 
 const mainRouter = require('./routes/mainRoutes');
 app.use('/', mainRouter);
