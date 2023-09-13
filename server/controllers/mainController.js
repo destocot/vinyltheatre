@@ -94,7 +94,9 @@ const login = async (req, res) => {
     }
 
     let token = jwt.sign({ username: user.username }, process.env.JWT_SECRET_KEY, { expiresIn: 60 * 10 }); // 10 minute
-    res.cookie("token", token)
+    res.cookie("token", token, {
+      sameSite: 'none',
+    })
     res.json(user.username);
   } catch (error) {
     return res.status(404).send({ message: "Invalid credentials, please try again." });
