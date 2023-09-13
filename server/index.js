@@ -10,7 +10,7 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({
-  origin: ["https://vinyltheatre-mvp.vercel.app"],
+  origin: "https://vinyltheatre-mvp.vercel.app",
   methods: ['POST', 'PUT', 'GET', 'DELETE', 'HEAD'],
   credentials: true
 }))
