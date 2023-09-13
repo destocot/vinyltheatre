@@ -18,19 +18,19 @@ app.use(cors({
 const mainRouter = require('./routes/mainRoutes');
 app.use('/', mainRouter);
 
-const discogsRouter = require('./routes/discogsRoutes');
-app.use('/api', discogsRouter);
+// const discogsRouter = require('./routes/discogsRoutes');
+// app.use('/api', discogsRouter);
 
-const dashboardRouter = require('./routes/dashboardRoutes');
-app.use('/dashboard', dashboardRouter);
+// const dashboardRouter = require('./routes/dashboardRoutes');
+// app.use('/dashboard', dashboardRouter);
 
-const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`Listening at http://localhost:${port}`.yellow))
+// const port = process.env.PORT || 5000;
 
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => {
-    console.log("Connected to MongoDB".magenta)
-    app.listen(port, () => console.log(`Listening at http://localhost:${port}`.yellow))
-  })
-  .catch((error) => {
-    console.log(error);
-  })
+// mongoose.connect(process.env.MONGODB_URI)
+//   .then(() => {
+//     console.log("Connected to MongoDB".magenta)
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
