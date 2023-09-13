@@ -5,9 +5,9 @@ const Album = require("../models/AlbumModel");
 const bcrypt = require('bcrypt');
 
 const register = async (req, res) => {
-  // return res.json({
-  //   error: 'registration is down, come back after mvp presentations'
-  // })
+  return res.json({
+    error: 'registration is down, come back after mvp presentations'
+  })
 
   try {
     const { username, email, password } = req.body;
