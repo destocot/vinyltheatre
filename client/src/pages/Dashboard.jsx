@@ -134,7 +134,7 @@ export default function Dashboard() {
           >
             <SearchIcon />
           </button>
-          {(albumTitle || artist) && (
+          {(albumTitle || artist || albums.length) && (
             <button
               className="dashboard-clear__btn"
               onClick={() => {
