@@ -166,12 +166,14 @@
   margin-left: 20px;
 
   @media (max-width: 640px) {
+    margin: 0 auto;
     padding: 5px;
   }
 
   & img {
     aspect-ratio: 1/1;
     object-fit: cover;
+    width: 18rem;
   }
 }
 
