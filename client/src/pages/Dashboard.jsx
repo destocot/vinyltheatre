@@ -15,6 +15,8 @@ import TuneIcon from "@mui/icons-material/Tune";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import SortByAlphaIcon from "@mui/icons-material/SortByAlpha";
+import SortIcon from "@mui/icons-material/Sort";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -49,7 +51,7 @@ export default function Dashboard() {
         perPage: 5,
       })
       .then((results) => {
-        console.log(results.data);
+        // console.log(results.data);
         setAlbums(results.data);
       })
       .catch((error) => console.log(error));
@@ -95,15 +97,36 @@ export default function Dashboard() {
     axios
       .get("/dashboard/albums", {
         withCredentials: true,
+        params: { sortedBy: "addedAsc" },
       })
       .then((res) => {
         setUserAlbums(res.data);
       })
       .catch(() => {
         removeAccess();
-        navigate("/login");
+        navigate("/login", { replace: true });
       });
   }, [navigate, removeAccess]);
+
+  const [alphabetized, setAlphabetized] = useState(false);
+  const [release, setRelease] = useState(false);
+  const sortAlbums = (query) => {
+    query = query || "addedAsc";
+    axios
+      .get("/dashboard/albums", {
+        withCredentials: true,
+        params: { sortedBy: `${query}` },
+      })
+      .then((res) => {
+        setInfo(true);
+        setTimeout(() => setInfo(false), 10);
+        setUserAlbums(res.data);
+      })
+      .catch(() => {
+        removeAccess();
+        navigate("/login", { replace: true });
+      });
+  };
 
   return (
     <div className="dashboard">
@@ -156,12 +179,42 @@ export default function Dashboard() {
       <h2 className="dashboard__user sub-heading">
         {name}&apos;s Profile{" "}
         {!info && (
-          <button
-            className="meta__return"
-            onClick={() => setEdit((state) => !state)}
-          >
-            <TuneIcon />
-          </button>
+          <>
+            <button
+              className="meta__return"
+              onClick={() => setEdit((state) => !state)}
+            >
+              <TuneIcon />
+            </button>
+            <button
+              className="meta__return"
+              onClick={() => {
+                if (!alphabetized) {
+                  sortAlbums("titleAsc");
+                  setAlphabetized(true);
+                } else {
+                  sortAlbums("titleDsc");
+                  setAlphabetized(false);
+                }
+              }}
+            >
+              <SortByAlphaIcon />
+            </button>
+            <button
+              className="meta__return"
+              onClick={() => {
+                if (!release) {
+                  sortAlbums("addedDsc");
+                  setRelease(true);
+                } else {
+                  sortAlbums("addedAsc");
+                  setRelease(false);
+                }
+              }}
+            >
+              <SortIcon />
+            </button>
+          </>
         )}
         {info && (
           <>

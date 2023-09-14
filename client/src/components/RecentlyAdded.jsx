@@ -17,7 +17,7 @@ export default function RecentlyAdded() {
 
   return (
     <div className="recent-container">
-      <h2 className="sub-heading">Recently Added Albums</h2>
+      <h2 className="sub-heading recent-heading">Recently Added Albums</h2>
       <div className="albums recent__albums">
         {albums.map((album) => (
           <CardMUI key={album._id} album={album} />

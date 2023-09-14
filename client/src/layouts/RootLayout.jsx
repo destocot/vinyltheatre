@@ -1,12 +1,32 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Link, Outlet } from "react-router-dom";
 import { useStore } from "../store/store";
 import AlbumIcon from "@mui/icons-material/Album";
+import axios from "../axiosConfig.js";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function RootLayout() {
-  const [access] = useStore((state) => [state.access]);
+  const [access, removeAccess] = useStore((state) => [
+    state.access,
+    state.removeAccess,
+  ]);
+
+  const logoutHandler = () => {
+    axios
+      .get("/logout", {
+        withCredentials: true,
+      })
+      .then(() => {
+        removeAccess();
+        toast.success("logout successful", { duration: 750 });
+      })
+      .catch(() => {
+        toast.error("error logging out");
+      });
+  };
 
   return (
     <div>
+      <Toaster />
       <header className="header">
         <nav className="nav">
           <h1 className="title">
@@ -29,6 +49,16 @@ export default function RootLayout() {
             <NavLink className="nav__link" to="/dashboard">
               Dashboard
             </NavLink>
+          )}
+          {access && (
+            <Link
+              className="nav__link logout"
+              to="/"
+              onClick={() => logoutHandler()}
+              replace={true}
+            >
+              Logout
+            </Link>
           )}
         </nav>
       </header>

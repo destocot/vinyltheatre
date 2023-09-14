@@ -22,11 +22,26 @@ const addAlbum = async (req, res) => {
 
 const getAlbums = async (req, res) => {
   try {
+    let query = req.query.sortedBy;
     const token = req.cookies.token;
+
     const { username } = await jwt.verify(token, process.env.JWT_SECRET_KEY);
 
-    const albums = await Album.find({ username });
-    res.json(albums);
+    let albums;
+    if (query === 'titleAsc') {
+      albums = await Album.find({ username }).sort({ title: 1 });
+      res.json(albums);
+    } else if (query === 'titleDsc') {
+      albums = await Album.find({ username }).sort({ title: -1 });
+      res.json(albums);
+    } else if (query === 'addedDsc') {
+      albums = await Album.find({ username }).sort({ createdAt: -1 });
+      res.json(albums);
+    } else {
+      albums = await Album.find({ username });
+      res.json(albums);
+    }
+
   } catch (error) {
     res.json({ mssg: "failed to get albums" })
   }

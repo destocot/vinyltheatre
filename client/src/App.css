@@ -75,9 +75,26 @@
   color: white;
 }
 
+.nav__link:hover,
+.nav__link:focus {
+  text-shadow: 0 0 1px white;
+}
+
 .nav .active {
   text-decoration: underline;
   text-underline-offset: 5px;
+}
+
+.logout {
+  border: 1px solid white;
+  border-radius: 2px;
+  transition: all 0.2s;
+  margin-left: 10px;
+}
+
+.logout:hover,
+.logout:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* albums container */

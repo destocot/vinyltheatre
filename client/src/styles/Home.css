@@ -1,6 +1,16 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* HOME */
 .search-container {
   padding: 0 20px;
+  animation: fadeIn 1s 0.1s backwards;
 }
 
 .search {
@@ -118,17 +128,12 @@
   animation: fadeIn 0.5s 0.5s backwards;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 /* RECENTLY ADDED ALBUMS */
 
 .recent-container {
   padding: 0 20px;
+}
+
+.recent-heading {
+  animation: fadeIn 1s;
 }

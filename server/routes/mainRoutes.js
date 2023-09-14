@@ -12,5 +12,10 @@ router.post('/login', login);
 router.get('/recent', recent);
 router.get('/user/:username', userAlbums);
 
+router.get('/logout', (req, res) => {
+  res.clearCookie("token");
+  res.status(200).send();
+});
+
 
 module.exports = router;

@@ -24,12 +24,12 @@ export default function Login() {
         }
       )
       .then(() => {
-        allowAccess();
         changeName(username);
         toast.success("Login Successful!\nRedirecting to your dashboard...", {
           duration: 1000,
         });
         setTimeout(() => {
+          allowAccess();
           navigate("/dashboard");
         }, 1000);
       })
@@ -40,7 +40,7 @@ export default function Login() {
 
   return (
     <>
-      <Toaster position="top-center" />
+      <Toaster />
       <div className="login">
         <h2 className="login__title sub-heading">Login:</h2>
         <form className="login__form" onSubmit={login}>
