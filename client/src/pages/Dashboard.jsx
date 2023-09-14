@@ -196,6 +196,7 @@ export default function Dashboard() {
                   sortAlbums("titleDsc");
                   setAlphabetized(false);
                 }
+                setRelease(false);
               }}
             >
               <SortByAlphaIcon />
