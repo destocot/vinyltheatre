@@ -204,10 +204,10 @@ export default function Dashboard() {
               className="meta__return"
               onClick={() => {
                 if (!release) {
-                  sortAlbums("addedDsc");
+                  sortAlbums("addedAsc");
                   setRelease(true);
                 } else {
-                  sortAlbums("addedAsc");
+                  sortAlbums("addedDsc");
                   setRelease(false);
                 }
               }}
