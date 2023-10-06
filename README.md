@@ -160,7 +160,7 @@ npm run dev
 <!-- CONTACT -->
 ## Contact
 
-Khurram Ali - [LinkedIn](https://www.linkedin.com/in/khurram-ali1) - email@example.com
+Khurram Ali - [LinkedIn](https://www.linkedin.com/in/khurram-ali1)
 
 Project Link: [https://github.com/destocot/vinyltheatre]([https://github.com/your_username/repo_name](https://github.com/destocot/vinyltheatre))
 
