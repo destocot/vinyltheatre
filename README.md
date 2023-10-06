@@ -55,7 +55,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="https://i.imgur.com/XeTWYXQ.png" alt="homepage" width="65%" height="auto">
+<div align="center">
+<img src="https://i.imgur.com/XeTWYXQ.png" alt="homepage" width="65%" height="auto" />
+</div>
 
 This project is a multi-page, full-stack application designed for the creation of music profiles. It offers several key features and optimizations aimed at enhancing the user experience and security:
 
@@ -129,35 +131,38 @@ npm run dev
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+<div align="center">
+<h3>Search User Profiles</h3>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXBnOGJwOTVsdjM4NWRudGM4Z3F0emU4NHRpZnhqZHJxY3o0ZG5iMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eG7D5gDmM2v5ZBdibf/giphy.gif" width="65%" height="auto" />
+<h3>Validation and Sessions</h3>
+<img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTFzc3BlczQ4dGx2b3hlNW9xcWJrcDg3MzVreDE3bmFnbjhpNHliMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TmVeaE39G96BxpZ06I/giphy.gif" alt="homepage" width="65%" height="auto" />
+<h3>Album Searching</h3>
+<img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWF0NHE2MnkxbXk5ZjZlYnYxNWRkYWs4a3NjMXlnbzJuNmM2emcwdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uc4V04Bp75T22JaHDp/giphy.gif" alt="homepage" width="65%" height="auto" />
+<h3>Album Sorting</h3>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExamgwMnppcTRoZWVxcjF0MTBhdDhwd2x4cjdhMzBqaHg4ZXNzd201MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/74m56b1gLa4nLRPgyf/giphy.gif" alt="homepage" width="65%" height="auto" />
+<h3>Album Information</h3>
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHoxeWZwbTlpNnV4azk3enZpMGJpb3M3N3M1OTl3aW55dWM0NnYwZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/USuj80L6Q0g6O4U8oH/giphy.gif" alt="homepage" width="65%" height="auto" />
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+- [x] Add User Sessions
+- [x] Responsive Design
+- [ ] Adjustments for Missing Information
+- [ ] Privacy Features
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Khurram Ali - [LinkedIn](https://www.linkedin.com/in/khurram-ali1) - email@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/destocot/vinyltheatre]([https://github.com/your_username/repo_name](https://github.com/destocot/vinyltheatre))
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
